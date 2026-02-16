@@ -7,7 +7,7 @@ app = FastAPI(
     title="Water Potability Prediction API",
     description="An API to predict water potability using a trained RandomForest model",
 )
-with open('C:\\Users\\hmohanty\\OneDrive - Nokia\\2026\\ML\\ml_pipeline\\model.pkl', 'rb') as model_file:
+with open('model.pkl', 'rb') as model_file:
     model = pickle.load(model_file) 
 @app.get("/")
 def read_root():
@@ -33,3 +33,4 @@ def predict_potability(Water_data: Water):
         return "Water is Not Consumable"
     #potability = "Water is Consumable" if prediction[0] == 1 else "Water is Not Consumable"
    # return {"prediction": potability}
+
